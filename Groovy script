@@ -1,0 +1,13 @@
+pipeline {
+    agent any
+    stages{
+        stage ('working with jenkins') {
+            steps {
+                script {
+                    println "Hi all welcome to jekins groovy/pipeline scripting"
+
+                }
+            }
+        }            
+    }
+}
