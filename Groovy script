@@ -8,9 +8,9 @@ pipeline {
             steps {
                 script {
                     val1 = 20
-                    println "my val1 value is ${val1)"
+                    println "my val1 value is ${val1}"
 
-                    println "my parameter value is $(params.ENV)"
+                    println "my parameter value is ${params.ENV}"
 
                 }
             }
