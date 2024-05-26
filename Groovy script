@@ -1,10 +1,16 @@
 pipeline {
     agent any
+    parameters {
+          choice choices: ['dev', 'prod'], description: 'select environment', name: 'ENV'
+    }
     stages{
-        stage ('working with jenkins') {
+        stage ('working with variables') {
             steps {
                 script {
-                    println "Hi all welcome to jekins groovy/pipeline scripting"
+                    val1 = 20
+                    println "my val1 value is ${val1)"
+
+                    println "my parameter value is $(params.ENV)"
 
                 }
             }
