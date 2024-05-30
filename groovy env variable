@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+    parameters {
+  choice choices: ['DEV', 'PRD'], description: 'Select Environment', name: 'ENV'
+}
+environment {
+    JAVA_HOME = "/usr/lib/jvm/java-11-openjdk-11.0.23.0.9-2.amzn2.0.1.x86_64/bin/java"
+}
+
+    stages {
+        stage ('working with conditions') {
+            steps {
+                script {
+                    val1 = 11
+                    println "my val1 value is ${val1}"
+                    println "my parameter value is ${params.ENV}"  
+                    println "my environment value is ${env.JAVA_HOME}"
+                    sh "java -version" 
+
+                }
+            }
+        }            
+    }
+}
