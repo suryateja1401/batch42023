@@ -1,18 +1,17 @@
 pipeline {
     agent any
-    stages{
+    parameters {
+  choice choices: ['DEV', 'PRD'], description: 'Select Environment', name: 'ENV'
+}
+
+    stages {
         stage ('working with conditions') {
             steps {
                 script {
-                    var1 = 11
-                    if ( var1 == 10 ) {
+                    val1 = 11
+                    println "my val1 value is ${val1}"
+                    println "my parameter value is ${params.ENV}"   
 
-                        println "my var1 value is 10"
-                    }
-                    
-                    else { 
-                        println "my var1 value is 20"
-                    }
                 }
             }
         }            
