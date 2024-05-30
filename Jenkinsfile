@@ -4,7 +4,7 @@ pipeline {
         stage ('working with conditions') {
             steps {
                 script {
-                    var1 = 10
+                    var1 = 20
                     if ( var1 == 10 ) {
 
                         println "my var1 value is 10"
